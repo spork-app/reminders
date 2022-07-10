@@ -1,0 +1,22 @@
+{
+    "name": "spork/reminders",
+    "description": "A Spork Plugin",
+    "type": "library",
+    "license": "MIT",
+    "authors": [],
+    "require": {
+        "spork/calendar": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spork\\Reminders\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spork\\Reminders\\ReminderServiceProvider"
+            ]
+        }
+    }
+}
