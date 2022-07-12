@@ -19,12 +19,12 @@ class ReminderRepository implements ReminderRepositoryContract
         $now = now();
 
         return $this->model->newModelQuery()->where(function (Builder $query) {
-            $query->where('should_repeat', true);
+            $query->where('settings->should_repeat', true);
         })
         ->orWhere(function (Builder $query) use ($now) {
-            $query->where('remind_at', '<=', $now->copy()->endOfMinute())
-                ->where('remind_at', '>=', $now->copy()->startOfMinute())
-                ->where('should_repeat', false);
+            $query->where('settings->remind_at', '<=', $now->copy()->endOfMinute())
+                ->where('settings->remind_at', '>=', $now->copy()->startOfMinute())
+                ->where('settings->should_repeat', false);
         })->get();
     }
 }
