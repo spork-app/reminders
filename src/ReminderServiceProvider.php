@@ -2,7 +2,7 @@
 
 namespace Spork\Reminders;
 
-use App\Spork;
+use Spork\Core\Spork;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Spork\Reminders\Contracts\ReminderRepositoryContract;
