@@ -3,7 +3,7 @@
 namespace Spork\Reminders\Jobs;
 
 use Spork\Reminders\Events\ReminderTriggered;
-use App\Models\FeatureList;
+use Spork\Core\Models\FeatureList;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

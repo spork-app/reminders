@@ -1,12 +1,12 @@
 <?php
 
-use App\Models\FeatureList;
+use Spork\Core\Models\FeatureList;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', 'Controller@method');
 
 Route::post('events', function () {
-    $feature = FeatureList::where('feature', FeatureList::FEATURE_REMINDERS)->firstOrFail();
+    $feature = FeatureList::where('feature', 'reminders')->firstOrFail();
 
     $event = $feature->repeatable()->create(array_filter([
         'name' => request()->get('name', null),
@@ -34,7 +34,7 @@ Route::post('events', function () {
 });
 
 Route::delete('events/{event}', function ($event) {
-    $feature = FeatureList::where('feature', FeatureList::FEATURE_REMINDERS)->firstOrFail();
+    $feature = FeatureList::where('feature', 'reminders')->firstOrFail();
 
     $event = $feature->repeatable()->findOrFail($event);
 

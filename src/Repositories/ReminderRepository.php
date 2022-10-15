@@ -2,7 +2,7 @@
 
 namespace Spork\Reminders\Repositories;
 
-use App\Models\FeatureList;
+use Spork\Core\Models\FeatureList;
 use Spork\Reminders\Contracts\ReminderRepositoryContract;
 use App\Repositories\AbstractRepository;
 use Illuminate\Database\Eloquent\Builder;

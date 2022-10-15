@@ -11,7 +11,7 @@ export default {
           ...reminders,
           ...(reminder.repeatable ?? []),
         }
-      }, {}));
+      }, {}) ?? {});
     },
   },
   actions: {
