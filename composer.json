@@ -38,7 +38,7 @@
         "test": "vendor/bin/phpunit",
         "format": "vendor/bin/pint"
     },
-    "homepage": "https://github.com/spork-app/planning",
+    "homepage": "https://github.com/spork-app/reminders",
     "keywords": [
         "spork-plugins"
     ],
