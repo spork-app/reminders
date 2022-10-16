@@ -4,7 +4,7 @@ namespace Spork\Reminders\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
-use Spork\Reminders\ReminderServiceProvider.php;
+use Spork\Reminders\ReminderServiceProvider;
 
 class TestCase extends TestbenchTestCase
 {
@@ -20,7 +20,7 @@ class TestCase extends TestbenchTestCase
     protected function getPackageProviders($app)
     {
         return [
-            ReminderServiceProvider.php::class,
+            ReminderServiceProvider::class,
         ];
     }
 }
