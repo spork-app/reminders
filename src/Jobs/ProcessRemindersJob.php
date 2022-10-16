@@ -2,8 +2,6 @@
 
 namespace Spork\Reminders\Jobs;
 
-use Spork\Reminders\Events\ReminderTriggered;
-use Spork\Core\Models\FeatureList;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,7 +9,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
+use Spork\Core\Models\FeatureList;
 use Spork\Reminders\Contracts\ReminderRepositoryContract;
+use Spork\Reminders\Events\ReminderTriggered;
 
 class ProcessRemindersJob implements ShouldQueue
 {
@@ -41,7 +41,7 @@ class ProcessRemindersJob implements ShouldQueue
 
     protected function isReadyToRun(FeatureList $reminder): bool
     {
-        if (!$reminder->should_repeat) {
+        if (! $reminder->should_repeat) {
             // This method will only get reminders that should be executed.
             return $this->isReminderReadyToRun($reminder);
         }

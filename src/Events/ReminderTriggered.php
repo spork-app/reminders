@@ -2,14 +2,12 @@
 
 namespace Spork\Reminders\Events;
 
-use Spork\Core\Models\FeatureList;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Spork\Core\Models\FeatureList;
 
 class ReminderTriggered implements ShouldBroadcastNow
 {
@@ -39,6 +37,6 @@ class ReminderTriggered implements ShouldBroadcastNow
 
     public function broadcastAs()
     {
-        return 'user.' . $this->reminder->user_id;
+        return 'user.'.$this->reminder->user_id;
     }
 }

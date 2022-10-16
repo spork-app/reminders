@@ -2,11 +2,10 @@
 
 namespace Spork\Reminders\Repositories;
 
-use Spork\Core\Models\FeatureList;
-use Spork\Reminders\Contracts\ReminderRepositoryContract;
-use App\Repositories\AbstractRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Spork\Core\Models\FeatureList;
+use Spork\Reminders\Contracts\ReminderRepositoryContract;
 
 class ReminderRepository implements ReminderRepositoryContract
 {

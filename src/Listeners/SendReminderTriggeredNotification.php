@@ -2,10 +2,10 @@
 
 namespace App\Features\Reminders\Listeners;
 
-use Spork\Reminders\Events\ReminderTriggered;
-use Spork\Reminders\Notifications\ReminderTriggeredNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Spork\Reminders\Events\ReminderTriggered;
+use Spork\Reminders\Notifications\ReminderTriggeredNotification;
 
 class SendReminderTriggeredNotification implements ShouldQueue
 {

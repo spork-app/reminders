@@ -2,13 +2,12 @@
 
 namespace Spork\Reminders\Notifications;
 
-use Spork\Core\Models\FeatureList;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
+use Spork\Core\Models\FeatureList;
 
 class ReminderTriggeredNotification extends Notification
 {
@@ -42,7 +41,7 @@ class ReminderTriggeredNotification extends Notification
         return (new MailMessage)
                     ->line(sprintf('Remember! %s', $this->reminder->name))
                     ->action('View notification', url('/reminders'))
-                    ->line('It occurs at: ' . Arr::first($this->reminder->next_twelve_occurrences)->format('F j, Y H:i a'));
+                    ->line('It occurs at: '.Arr::first($this->reminder->next_twelve_occurrences)->format('F j, Y H:i a'));
     }
 
     /**

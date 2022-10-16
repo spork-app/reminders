@@ -1,7 +1,7 @@
 <?php
 
-use Spork\Core\Models\FeatureList;
 use Illuminate\Support\Facades\Route;
+use Spork\Core\Models\FeatureList;
 
 // Route::get('/', 'Controller@method');
 
@@ -39,5 +39,6 @@ Route::delete('events/{event}', function ($event) {
     $event = $feature->repeatable()->findOrFail($event);
 
     $event->delete();
+
     return '';
 });
