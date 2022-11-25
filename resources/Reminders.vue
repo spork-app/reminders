@@ -4,7 +4,7 @@
             :form="form"
             title="Reminders"
             singular="Reminder"
-            @save="save"
+            :save="save"
             @destroy="onDelete"
             @index="() => ''"
             @execute="onExecute"
@@ -85,8 +85,8 @@
                                 <!-- Yes I see you. That means you could use for_hour, for_minute, and for_second, but that may cripple your server... You have been warned. -->
                             </select>
                         </div>
-                        
-                        <div v-if="form.for_set_position === 'for_week_numbers'" class="flex items-center w-full py-4"> 
+
+                        <div v-if="form.for_set_position === 'for_week_numbers'" class="flex items-center w-full py-4">
                             <spork-input v-model="form[form.for_set_position]" />
                         </div>
                         <div v-if="form.for_set_position === 'for_month'" class="flex items-center w-full py-4">
@@ -94,12 +94,12 @@
                                 <option value="">For month</option>
                             </select>
                         </div>
-                        
+
                         <div class="px-4 py-2 w-full flex justify-between items-center">
                             <label class="block mb-2" for="date_end">
                                 Does this have an end date?
                             </label>
-                            
+
                             <Switch
                                 @click="() => {
                                     if (form.date_end) {
@@ -117,7 +117,7 @@
                                 />
                             </Switch>
                         </div>
-                        
+
                         <div class="px-4 py-2 w-full" v-if="form.date_end">
                             <label class="block text-sm font-bold mb-2" for="date_end">
                                 Ends at (optional)
