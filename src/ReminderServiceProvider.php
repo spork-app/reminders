@@ -20,7 +20,7 @@ class ReminderServiceProvider extends RouteServiceProvider
         $this->app->bind(ReminderRepositoryContract::class, ReminderRepository::class);
 
         Spork::addFeature('Reminders', 'AnnotationIcon', '/reminders', 'crud');
-        $this->mergeConfigFrom(__DIR__ . '/../config/spork.php', 'spork.reminders');
+        $this->mergeConfigFrom(__DIR__.'/../config/spork.php', 'spork.reminders');
 
         if (config('spork.reminders.enabled')) {
             Route::middleware($this->app->make('config')->get('spork.reminders.middleware', ['auth:sanctum']))
